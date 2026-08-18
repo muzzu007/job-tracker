@@ -39,7 +39,7 @@ function Register() {
                 return;
             }
 
-            if (!formData.password.trim()) {
+            if (!formData.password) {
                 toast.error("Password is required");
                 return;
             }
@@ -65,9 +65,10 @@ function Register() {
             }
 
 
-            toast.success(data.message);
+            toast.success(data.message ||
+                "Registration successful");
 
-            setShowLogin(true);
+            navigate("/login");
         } catch (error) {
             toast.error("Unable to connect to server");
         } finally {
