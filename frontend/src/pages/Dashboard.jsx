@@ -152,7 +152,7 @@ function Dashboard() {
     //Delete the Jobs
     async function deleteJob(id) {
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs${id}`,
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs/${id}`,
                 {
                     method: "DELETE",
                     headers: {
